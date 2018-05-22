@@ -32,10 +32,10 @@ namespace Akka.Persistence.Reminders
             public DateTime TriggerDateUtc { get; }
             public TimeSpan? RepeatInterval { get; }
 
-            public Entry(string taskId, ActorPath receiver, object message, DateTime triggerDateUtc, TimeSpan? repeatInterval = null)
+            public Entry(string taskId, ActorPath recipient, object message, DateTime triggerDateUtc, TimeSpan? repeatInterval = null)
             {
                 TaskId = taskId ?? throw new ArgumentNullException(nameof(taskId));
-                Recipient = receiver ?? throw new ArgumentNullException(nameof(receiver));
+                Recipient = recipient ?? throw new ArgumentNullException(nameof(recipient));
                 Message = message ?? throw new ArgumentNullException(nameof(message));
                 TriggerDateUtc = triggerDateUtc;
                 RepeatInterval = repeatInterval;
@@ -43,7 +43,7 @@ namespace Akka.Persistence.Reminders
 
             public Entry WithNextTriggerDate(DateTime nextDate) => new Entry(
                 taskId: TaskId,
-                receiver: Recipient,
+                recipient: Recipient,
                 message: Message,
                 triggerDateUtc: nextDate,
                 repeatInterval: RepeatInterval);
