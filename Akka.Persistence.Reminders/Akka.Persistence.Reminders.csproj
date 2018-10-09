@@ -2,7 +2,6 @@
   <PropertyGroup>
     <AssemblyTitle>Akka.Persistence.Reminders</AssemblyTitle>
     <Description>Long running Akka.NET scheduler backed by Akka.Persistence </Description>
-    <TargetFrameworks>net45;netstandard1.6</TargetFrameworks>
     <PackageTags>akka.net;actors;persistence;reminders;scheduler</PackageTags>
     <Copyright>Copyright © 2017 Akka.NET Team</Copyright>
     <Authors>Bartosz Sypytkowski</Authors>
@@ -13,6 +12,7 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
+    <TargetFramework>netstandard1.6</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="reference.conf" />
